@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>SecureMail Admin Login</title>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="/assets/img/favicon.ico" th:href="@{/assets/img/favicon.ico}"/>
+        <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.css" th:href="@{/webjars/bootstrap/css/bootstrap.css}" />
+        <link rel="stylesheet" href="/assets/css/custom.css" th:href="@{/assets/css/custom.css}"/>
+	</head>
+    <body>
+        <div th:substituteby="admin/templates::header"></div>
+        <div class="container">
+            <p th:if="${loginError}" class="alert alert-danger">Wrong user or password</p>
+            <form th:action="@{/admin/login}" method="post" class="form-horizontal" role="form">
+                <h2>SecureMail Admin Login</h2>
+                <br/>
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" id="username" name="username" placeholder="username" autofocus="autofocus" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password" />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-3">
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div th:substituteby="admin/templates::footer"></div>
+        <script src="/webjars/jquery/jquery.min.js" th:src="@{/webjars/jquery/jquery.min.js}"></script>
+        <script src="/webjars/bootstrap/js/bootstrap.min.js" th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    </body>
+</html>
