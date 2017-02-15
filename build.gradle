@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.4.0.RELEASE")
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.5.1.RELEASE")
     }
 }
 
@@ -19,7 +19,7 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
-ext['spring-security.version'] = '4.1.3.RELEASE'
+ext['spring-security.version'] = '4.2.1.RELEASE'
 ext['assertj.version'] = '3.5.2'
 
 repositories {
@@ -38,7 +38,6 @@ dependencies {
             "org.webjars:angularjs:1.4.9",
             "org.webjars:bootstrap:3.3.6",
             "org.webjars:jquery:1.11.3",
-            "com.fasterxml.jackson.core:jackson-annotations:2.8.0",
             "com.h2database:h2"
 
     testCompile "org.springframework.boot:spring-boot-starter-test",

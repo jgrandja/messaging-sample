@@ -33,7 +33,6 @@ import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
  * @author Rob Winch
  * @author Joe Grandja
  */
-@Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
@@ -56,11 +55,7 @@ public class SecurityConfig {
 					.antMatchers("/users/{userId}").access("@authz.check(#userId,principal)")
 					.anyRequest().hasRole("USER")
 					.and()
-				.httpBasic()
-					.and()
-				.formLogin()
-					.loginPage("/")
-					.permitAll();
+				.httpBasic();
 		}
 		// @formatter:on
 
